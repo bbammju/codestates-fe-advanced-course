@@ -74,7 +74,7 @@ const Content = () => {
   const getdata = requestdata()
   const requestcomment = async () => {
     try {
-      const commentdata = await axios.get(`https://jsonplaceholder.typicode.com/comments`)
+      const commentdata = await axios.get(`https://jsonplaceholder.typicode.com/posts/${params.id}/comments`)
       return commentdata
     }
     catch (err) { }
@@ -99,18 +99,14 @@ const Content = () => {
         <ContentContainer>{content.body}</ContentContainer>
         <InfoContainer>댓글 5개</InfoContainer>
         <CommentContainer>
+          <br/>
           {comment.slice(0).map((el) => {
             return (
-              <>
-                {el.postId === content.id ?
-                  <>
-                    <CommentnameContainer>{el.name}</CommentnameContainer>
-                    <CommentbodyContainer>{el.body}</CommentbodyContainer>
-                    <br></br>
-                  </>
-                  : null}
-
-              </>
+              <div key={el.id}>
+                <CommentnameContainer>{el.name}</CommentnameContainer>
+                <CommentbodyContainer>{el.body}</CommentbodyContainer>
+                <br></br>
+              </div>
             )
           })}
         </CommentContainer>
