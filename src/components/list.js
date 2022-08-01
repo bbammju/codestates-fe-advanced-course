@@ -18,6 +18,9 @@ const ContentContainer = styled.div`
   align-items: center;
   border-bottom: solid 1px;
   border-color: rgba(0, 0, 0, 0.2);
+  &:hover{  
+    color : #a3896e;
+  }
 `
 const Blank = styled.div`
   width: 80vw;

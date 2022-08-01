@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import Logo from "../assets/logo.png"
+import { useNavigate } from "react-router-dom";
 
 const HeaderContainer = styled.div`
   width: 100vw;
@@ -20,10 +21,14 @@ const LogoContainer = styled.img`
 `
 
 const Header = () => {
+  const navigate = useNavigate()
+  const navigateHandler = () => {
+    navigate(`/`)
+  }  
   return(
     
     <HeaderContainer>
-      <LogoContainer src={Logo}/>
+      <LogoContainer src={Logo} onClick={() => {navigateHandler()}}/>
     </HeaderContainer>
     
   )
