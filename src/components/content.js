@@ -12,7 +12,7 @@ const Container = styled.div`
   flex-direction: column;
   margin: 0 auto;
   border-radius: 1rem;
-  box-shadow: 3px 3px 9px 1px #999;
+  box-shadow: 3px 3px 9px 1px #a3896e;
 `
 const TitleContainer = styled.h1`
   height: 7vh;
@@ -97,7 +97,7 @@ const Content = () => {
         <TitleContainer>{content.title}</TitleContainer>
         <InfoContainer>작성자 {content.userId}</InfoContainer>
         <ContentContainer>{content.body}</ContentContainer>
-        <InfoContainer>댓글 5개</InfoContainer>
+        <InfoContainer>댓글 {comment.length}개</InfoContainer>
         <CommentContainer>
           <br/>
           {comment.slice(0).map((el) => {
